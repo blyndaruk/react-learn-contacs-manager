@@ -7,10 +7,14 @@ import { faSortDown } from '@fortawesome/free-solid-svg-icons'
 import './Contact.scss';
 
 class Contact extends Component {
-  state = {};
+  state = {
+    showContactInfo: false,
+  };
 
-  onClickHandle = (name) => {
-    console.log(name);
+  onClickHandle = () => {
+    this.setState({
+      showContactInfo: !this.state.showContactInfo,
+    });
   };
 
   render() {
@@ -18,7 +22,7 @@ class Contact extends Component {
     return (
       <div className="card card-body mb-3">
         <h4
-          className='contact'
+          className='contact-title'
           role="button"
           onClick={this.onClickHandle.bind(this, name)}
         >
@@ -30,10 +34,12 @@ class Contact extends Component {
             icon={faSortDown}
           />
         </h4>
-        <ul className="list-group border-0">
-          <li className="list-group-item">Email: {email}</li>
-          <li className="list-group-item">Phone: {phone}</li>
-        </ul>
+        {this.state.showContactInfo
+         ? (<ul className="list-group border-0">
+            <li className="list-group-item">Email: {email}</li>
+            <li className="list-group-item">Phone: {phone}</li>
+          </ul>)
+         : null}
       </div>
     );
   }
