@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import { Consumer } from '../../context';
+import { Consumer } from '../../../context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
