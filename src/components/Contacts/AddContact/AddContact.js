@@ -14,7 +14,8 @@ class AddContact extends Component {
       name: this.nameInput.current.value,
       email: this.emailInput.current.value,
       phone: this.phoneInput.current.value,
-    }
+    };
+
     console.log(contact);
   };
 
